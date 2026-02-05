@@ -23,6 +23,7 @@ module ss_pipeline_reg_fsm (
             end
         end
     end
-    assign in_ready = ~out_valid && out_ready;  //the producer is ready to send data only is the consumer is ready to consume data and when  no data is being processed or valid is 0
+    assign in_ready = ~out_valid || out_ready;  //the producer is ready to send data only is the consumer is ready to consume data or when  no data is being processed or valid is 0
 
 endmodule
+
